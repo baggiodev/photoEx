@@ -48,9 +48,6 @@ app.use(bodyParser.json());
 app.get("/",function(req,res){
     res.send("public/index.html")
 })
-app.get("/baggio",function(req,res){
-    res.sendFile(path.join(__dirname, "./public/baggio.jpg"));
-})
 app.post("/photo",upload.single("pic"),function(req,res){
     console.log(req.file);
     const photo = new Photo({
